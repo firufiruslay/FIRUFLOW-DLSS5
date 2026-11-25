@@ -23,7 +23,12 @@ DefaultGroupName={#DisplayName}
 PrivilegesRequired=lowest
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
+; Chocolatey ships Inno Setup 6, which does not know the directives below.
+; scripts/ci/package-flavor.py defines LegacyWizard so this file still compiles
+; there; without it the wizard keeps the appearance the author designed.
+#ifndef LegacyWizard
 SetupArchitecture=x64
+#endif
 MinVersion=10.0.19041
 SetupMutex=Veyra.Windows.Setup
 DisableWelcomePage=no
@@ -37,23 +42,27 @@ UninstallDisplayName={#DisplayName}
 UninstallDisplayIcon={app}\{#LauncherExe}
 UninstallFilesDir={app}
 SetupIconFile={#AppIcon}
+#ifdef LegacyWizard
+WizardStyle=modern
+#else
 WizardStyle=modern dark hidebevels
 WizardBackImageFile={#BrandBackground}
 WizardBackColor=#100E1D
-WizardImageFile={#BrandPanel}
 WizardImageBackColor=#161425
-WizardSmallImageFile={#BrandIcon}
 WizardSmallImageBackColor=#161425
+#endif
+WizardImageFile={#BrandPanel}
+WizardSmallImageFile={#BrandIcon}
 WizardSizePercent=118,112
 Compression=lzma2/fast
 SolidCompression=yes
 LZMANumBlockThreads=1
 OutputDir={#OutputDir}
-OutputBaseFilename=Veyra-{#AppVersion}-{#Flavor}-win64-setup
+OutputBaseFilename=FIRUFLOW-DLSS5-{#AppVersion}-{#Flavor}-win64-setup
 VersionInfoVersion={#AppVersion}.0
-VersionInfoProductName=Veyra
-VersionInfoDescription=Veyra Setup ({#Flavor})
-VersionInfoCompany=Veyra
+VersionInfoProductName=FIRUFLOW DLSS5
+VersionInfoDescription=FIRUFLOW DLSS5 Setup ({#Flavor})
+VersionInfoCompany=FIRUFLOW
 #ifdef PublisherSigning
 SignTool=publisher
 SignedUninstaller=yes
