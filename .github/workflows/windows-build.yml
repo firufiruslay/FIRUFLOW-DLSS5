@@ -33,6 +33,7 @@ concurrency:
 
 env:
   VCPKG_COMMIT: 30ef65cad98f08e7197c9a1656fbd871bcb72f2d   # = vcpkg.json builtin-baseline
+  INNO_SETUP: 6.7.1   # Chocolatey's latest; the author builds with 7
   QT_VERSION: '6.8.3'
   CARGO_C_VERSION: '0.10.26'
 
@@ -244,10 +245,22 @@ jobs:
 
       - name: Install Inno Setup
         run: |
-          choco install innosetup --no-progress --yes | Out-Host
+          choco install innosetup --version=$env:INNO_SETUP --no-progress --yes | Out-Host
           $iscc = Get-ChildItem "$env:ProgramFiles", "${env:ProgramFiles(x86)}" -Filter ISCC.exe -Recurse -ErrorAction SilentlyContinue |
                   Select-Object -First 1 -ExpandProperty FullName
           if (!$iscc) { throw "ISCC.exe not found after installing Inno Setup" }
+          # The package installs the compiler without the translations the setup
+          # script asks for, so take them from Inno Setup's own source at the tag
+          # that matches the compiler. Chinese lives under Unofficial/.
+          $languages = Join-Path (Split-Path $iscc) "Languages"
+          New-Item -ItemType Directory -Force $languages | Out-Null
+          $base = "https://raw.githubusercontent.com/jrsoftware/issrc/is-$($env:INNO_SETUP -replace '\.','_')/Files/Languages"
+          foreach ($name in 'Japanese', 'Korean', 'Spanish', 'French', 'German', 'BrazilianPortuguese', 'Russian') {
+            if (!(Test-Path "$languages\$name.isl")) { Invoke-WebRequest "$base/$name.isl" -OutFile "$languages\$name.isl" }
+          }
+          foreach ($name in 'ChineseSimplified', 'ChineseTraditional') {
+            if (!(Test-Path "$languages\$name.isl")) { Invoke-WebRequest "$base/Unofficial/$name.isl" -OutFile "$languages\$name.isl" }
+          }
           "ISCC=$iscc" >> $env:GITHUB_ENV
 
       - name: Build the NVIDIA package and installer
