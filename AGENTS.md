@@ -5,6 +5,9 @@ Este repo es el fork de Firuo (`firufiruslay/FIRUFLOW-DLSS5`), no el proyecto or
 - **Nunca se abre un PR, rama ni issue contra `Likely7/Veyra-NRVideo`.** `gh pr create` usa el
   upstream como base por defecto: pasa siempre `--repo firufiruslay/FIRUFLOW-DLSS5`. El
   repo ya tiene fijado `gh repo set-default` apuntando aquí.
+- **Dentro de este repo todo cambio entra por PR**, de una rama suya a `main`. Nada de commits
+  ni merges directos sobre `main`: el PR es donde se revisa el cambio y donde el build de
+  Windows se pronuncia antes de que `main` lo adopte.
 - Se conserva la atribución a Veyra que exige la GPL-3.0 (créditos, avisos de terceros,
   copyright). Lo que no se conserva son los enlaces de donación o pago.
 - El contexto del workspace está en `../AGENTS.md` y `../project-memory/`.
