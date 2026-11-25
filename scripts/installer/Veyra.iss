@@ -2,17 +2,22 @@
   #error Build this installer with scripts/package-windows-installer.py.
 #endif
 
-#define DisplayName "Veyra (" + Flavor + ")"
-#define InstallId "Veyra.Win64." + Flavor
+#define DisplayName "FIRUFLOW DLSS5 (" + Flavor + ")"
+#define InstallId "FIRUFLOW.Win64." + Flavor
+; include/veyra/base/PortableLayout.h fixes this name in the code, so the brand
+; shows in the shortcut label while the launcher keeps the name it is found by.
+#ifndef LauncherExe
+  #define LauncherExe "Veyra.exe"
+#endif
 
 [Setup]
 AppId={#InstallId}
 AppName={#DisplayName}
 AppVersion={#AppVersion}
-AppPublisher=Veyra
-AppPublisherURL=https://github.com/Likely7/Veyra-NRVideo
-AppSupportURL=https://github.com/Likely7/Veyra-NRVideo/issues
-AppUpdatesURL=https://github.com/Likely7/Veyra-NRVideo/releases
+AppPublisher=FIRUFLOW
+AppPublisherURL=https://github.com/firufiruslay/FIRUFLOW-DLSS5
+AppSupportURL=https://github.com/firufiruslay/FIRUFLOW-DLSS5/issues
+AppUpdatesURL=https://github.com/firufiruslay/FIRUFLOW-DLSS5/releases
 DefaultDirName={localappdata}\Programs\{#DisplayName}
 DefaultGroupName={#DisplayName}
 PrivilegesRequired=lowest
@@ -29,7 +34,7 @@ AllowRootDirectory=no
 CloseApplications=no
 RestartApplications=no
 UninstallDisplayName={#DisplayName}
-UninstallDisplayIcon={app}\Veyra.exe
+UninstallDisplayIcon={app}\{#LauncherExe}
 UninstallFilesDir={app}
 SetupIconFile={#AppIcon}
 WizardStyle=modern dark hidebevels
@@ -141,12 +146,12 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 #include PayloadList
 
 [Icons]
-Name: "{group}\Veyra"; Filename: "{app}\Veyra.exe"; WorkingDir: "{app}"
-Name: "{group}\{cm:UninstallProgram,Veyra}"; Filename: "{uninstallexe}"
-Name: "{userdesktop}\{#DisplayName}"; Filename: "{app}\Veyra.exe"; WorkingDir: "{app}"; Tasks: desktopicon
+Name: "{group}\{#DisplayName}"; Filename: "{app}\{#LauncherExe}"; WorkingDir: "{app}"
+Name: "{group}\{cm:UninstallProgram,{#DisplayName}}"; Filename: "{uninstallexe}"
+Name: "{userdesktop}\{#DisplayName}"; Filename: "{app}\{#LauncherExe}"; WorkingDir: "{app}"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\Veyra.exe"; Description: "{cm:LaunchProgram,Veyra}"; WorkingDir: "{app}"; Flags: nowait postinstall skipifsilent unchecked
+Filename: "{app}\{#LauncherExe}"; Description: "{cm:LaunchProgram,FIRUFLOW DLSS5}"; WorkingDir: "{app}"; Flags: nowait postinstall skipifsilent unchecked
 
 [Code]
 const
