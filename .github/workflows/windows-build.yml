@@ -7,7 +7,7 @@ name: Windows build (reproducible)
 # Outputs: a portable zip without proprietary runtime DLLs, SHA256SUMS and,
 # outside pull requests, a signed build-provenance attestation so users can
 # check that a download came from this workflow:
-#   gh attestation verify <zip> -R Likely7/Veyra-NRVideo
+#   gh attestation verify <zip> -R firufiruslay/FIRUFLOW-DLSS5
 
 on:
   workflow_dispatch:
