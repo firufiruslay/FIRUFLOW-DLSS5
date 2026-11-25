@@ -150,7 +150,10 @@ jobs:
 
       - name: Build veyra_qml_ui, virtual camera and shaders
         run: |
-          cmake --build C:\b --parallel --target veyra_qml_ui veyra_virtualcam_components
+          # The launcher and the update worker only hang off veyra_qml_ui when an update
+          # key is configured (CMakeLists.txt), and the installer needs both: ask for them.
+          cmake --build C:\b --parallel --target veyra_qml_ui veyra_virtualcam_components `
+            veyra_portable_launcher veyra_update_worker
           $shaders = ninja -C C:\b -t targets all | ForEach-Object { ($_ -split ':')[0] } | Where-Object { $_ -match '^veyra_shader_' } | Sort-Object -Unique
           if ($shaders) { cmake --build C:\b --parallel --target @shaders }
 

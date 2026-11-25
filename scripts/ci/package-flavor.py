@@ -80,7 +80,8 @@ def assemble(stage, runtime, output, flavor, version):
 
 
 def archive(package):
-    destination = package.with_suffix(".zip")
+    # The name carries dots (2.2.1), so with_suffix would eat the version.
+    destination = package.parent / (package.name + ".zip")
     with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
         for f in sorted(p for p in package.rglob("*") if p.is_file()):
             zf.write(f, f"{package.name}/{f.relative_to(package).as_posix()}")
