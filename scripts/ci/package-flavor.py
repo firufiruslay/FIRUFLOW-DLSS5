@@ -131,7 +131,9 @@ def build_setup(args, package, version, flavor):
         defines = dict(Flavor=flavor, AppVersion=version, OutputDir=output, PayloadList=file_list,
                        AppIcon=ROOT / "assets/veyra.ico",
                        BrandBackground=ROOT / "qml/Veyra/backdrop-dusk.png",
-                       BrandPanel=panel, BrandIcon=icon)
+                       BrandPanel=panel, BrandIcon=icon,
+                       # Inno Setup 6 is what Chocolatey ships; see Veyra.iss.
+                       LegacyWizard="1")
         command = [str(args.iscc), "/Qp"]
         command.extend(f"/D{key}={str(value).replace('/', os.sep)}" for key, value in defines.items())
         command.append(str(ROOT / "scripts/installer/Veyra.iss"))
