@@ -8,7 +8,7 @@
 
 **Super resolution · Denoising · HDR · Frame generation · Capture · PS5 / Xbox / PC streaming**
 
-The build FIRUSLAY runs: one real-time GPU pipeline for local video, capture cards and game streaming.
+The build behind [@firuflow](https://www.tiktok.com/@firuflow): one real-time GPU pipeline for local video, capture cards and game streaming.
 
 <br>
 
@@ -16,6 +16,8 @@ The build FIRUSLAY runs: one real-time GPU pipeline for local video, capture car
 [![DirectX 12](https://img.shields.io/badge/DirectX-12-0A84FF?style=for-the-badge)](#install)
 [![License GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-0A84FF?style=for-the-badge)](LICENSE)
 [![Windows build](https://img.shields.io/github/actions/workflow/status/firufiruslay/FIRUFLOW-DLSS5/windows-build.yml?style=for-the-badge&label=Build&color=0A84FF)](https://github.com/firufiruslay/FIRUFLOW-DLSS5/actions/workflows/windows-build.yml)
+
+[![TikTok @firuflow](https://img.shields.io/badge/TikTok-%40firuflow-0A84FF?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@firuflow)
 
 [**🐛 Report an issue**](https://github.com/firufiruslay/FIRUFLOW-DLSS5/issues)
 &nbsp;·&nbsp;
@@ -37,7 +39,8 @@ and frame generation run in one pipeline, so the same settings apply to playback
 export.
 
 It is a fork of [Veyra NR](https://github.com/Likely7/Veyra-NRVideo) (GPL-3.0) by
-[@likely2002](https://x.com/likely2002), rebranded and maintained for the FIRUSLAY channel. The
+[@likely2002](https://x.com/likely2002), rebranded and maintained for
+[FIRUFLOW on TikTok](https://www.tiktok.com/@firuflow). The
 engine is upstream's work; the credit for it stays with them. What changed here is the name and
 the removal of the original author's donation and payment links — this build asks nobody for
 money.
