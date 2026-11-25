@@ -1,3 +1,17 @@
+# FIRUFLOW DLSS5 — reglas del fork
+
+Este repo es el fork de Firuo (`firufiruslay/FIRUFLOW-DLSS5`), no el proyecto original.
+
+- **Nunca se abre un PR, rama ni issue contra `Likely7/Veyra-NRVideo`.** `gh pr create` usa el
+  upstream como base por defecto: pasa siempre `--repo firufiruslay/FIRUFLOW-DLSS5`. El
+  repo ya tiene fijado `gh repo set-default` apuntando aquí.
+- Se conserva la atribución a Veyra que exige la GPL-3.0 (créditos, avisos de terceros,
+  copyright). Lo que no se conserva son los enlaces de donación o pago.
+- El contexto del workspace está en `../AGENTS.md` y `../project-memory/`.
+
+Lo que sigue son las reglas heredadas del proyecto original; sus rutas `E:/` y sus tareas
+con fecha describen la máquina del autor original, no esta.
+
 # Veyra Agent 执行规则
 
 更新：2026-11-19。当前任务为整合各功能与修复至本地 main，版本源码 2.2.0。用户要求本轮先不构建。旧规则全文在[归档](docs/history/rules/AGENTS_before_main_2026-11-18.md)，其中带日期的施工树、版本与授权属于当时记录，不能覆盖用户后续指令。
