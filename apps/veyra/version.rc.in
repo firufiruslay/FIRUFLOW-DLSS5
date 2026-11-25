@@ -13,12 +13,12 @@ BEGIN
  BEGIN
   BLOCK "040904B0"
   BEGIN
-   VALUE "FileDescription", "Veyra Video Player"
+   VALUE "FileDescription", "FIRUFLOW DLSS5 Video Player"
    VALUE "FileVersion", "@VEYRA_DISPLAY_VERSION@"
-   VALUE "ProductName", "Veyra"
+   VALUE "ProductName", "FIRUFLOW DLSS5"
    VALUE "ProductVersion", "@VEYRA_DISPLAY_VERSION@"
    VALUE "OriginalFilename", "@VEYRA_RESOURCE_FILENAME@"
-   VALUE "LegalCopyright", "Veyra contributors. GPL-3.0."
+   VALUE "LegalCopyright", "FIRUFLOW DLSS5, a fork of Veyra. Veyra contributors. GPL-3.0."
   END
  END
  BLOCK "VarFileInfo"

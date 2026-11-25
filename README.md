@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="assets/veyra-wordmark-sun.gif" alt="Veyra NR · transparent animated wordmark and sun" width="480">
+# FIRUFLOW DLSS5
 
-# Veyra
+<sub>A fork of <a href="https://github.com/Likely7/Veyra-NRVideo">Veyra NR</a> (GPL-3.0)</sub>
 
 <!-- veyra-creator-and-tutorials:start -->
 <p align="center">
@@ -29,30 +29,6 @@
 **Super Resolution · Denoising · HDR · Frame Generation · Capture · PS5 / Xbox / PC Streaming**
 
 Turn local video, capture cards and game streaming into one real-time GPU enhancement pipeline.
-
----
-
-### 💜 Community Support / 社区支持
-
-**English**
-
-A huge thank you to the Pump.fun community for supporting Veyra!
-
-I've received creator fees from a community-created Veyra token. These contributions will help support the continued development of Veyra.
-
-**中文**
-
-非常感谢 Pump.fun 社区对 Veyra 的支持！
-
-我已经从社区自行创建的 Veyra 代币中领取了创作者手续费。这些收入将帮助支持 Veyra 的持续开发。
-
-**Token Contract Address (CA) / 代币合约地址：**
-
-`i6Aop7z5qLaY47kseaoUt6kGq4Pi2ySg8j7cxRkpump`
-
-**Disclaimer / 免责声明：** This token was independently created by the community and is not an official Veyra release or investment recommendation. Veyra remains free and open-source.
-
-该代币由社区独立创建，并非 Veyra 官方发行的代币，也不构成投资建议。Veyra 仍然是免费开源软件。
 
 ---
 
@@ -263,21 +239,10 @@ Original code: GPL-3.0. The combined Chiaki streaming application is also subjec
 
 <p align="center">
   <a href="https://discord.gg/qetVZTRkC"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join Veyra on Discord" height="36"></a>
-  &nbsp;&nbsp;
-  <a href="https://www.patreon.com/cw/Likely7" title="Patreon 主页 / Creator page"><img src="https://raw.githubusercontent.com/Likely7/Veyra-NRVideo/main/docs/images/support/patreon-home.svg" alt="Patreon 主页 / Creator page" height="36"></a>
-  &nbsp;&nbsp;
-  <a href="https://www.patreon.com/Likely7/posts/buy-me-coffee-175018110" title="请我喝杯咖啡 · US$5 / Coffee support"><img src="https://raw.githubusercontent.com/Likely7/Veyra-NRVideo/main/docs/images/support/patreon-coffee.svg" alt="☕ 请我喝杯咖啡 · US$5 / Coffee support" height="36"></a>
 </p>
 
 <p align="center">
-  Patreon 主页查看作者动态；☕ 咖啡按钮直达 US$5 赞助页面。<br>
-  Visit the creator page for updates, or open the US$5 coffee support page.
+  <img src="https://raw.githubusercontent.com/Likely7/Veyra-NRVideo/main/docs/images/community/group-15-20261119.png" alt="Upstream community group 15" width="220">
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Likely7/Veyra-NRVideo/v1.4.0/docs/images/1.4.0/donate-wechat.jpg" alt="WeChat donation" width="220">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Likely7/Veyra-NRVideo/main/docs/images/community/group-15-20261119.png" alt="Veyra community group 15" width="220">
-</p>
-
-Left: optional donation, no feature restrictions. Right: community group 15; QR valid **before 2026-11-26** as shown. Check repository updates after expiry.
+Upstream community group 15; QR valid **before 2026-11-26** as shown. Check repository updates after expiry.

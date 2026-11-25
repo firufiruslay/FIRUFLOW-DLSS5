@@ -843,9 +843,9 @@ static int runApplication(int argc, char** argv, QString& restartProgram, QStrin
     };
     static NoKeyMenuFilter noKeyMenu;
     app.installNativeEventFilter(&noKeyMenu);
-    app.setApplicationName(QStringLiteral("Veyra"));
-    app.setOrganizationName(QStringLiteral("Veyra"));
-    veyra::log::info("app", "Veyra QML session started");
+    app.setApplicationName(QStringLiteral("FIRUFLOW DLSS5"));
+    app.setOrganizationName(QStringLiteral("FIRUFLOW DLSS5"));
+    veyra::log::info("app", "FIRUFLOW DLSS5 QML session started");
 
     engine::EngineController controller;
 

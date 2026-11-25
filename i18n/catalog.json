@@ -4356,32 +4356,6 @@
    "ru": "Parakeet TDT · английский"
   },
   {
-   "zh": "Patreon 主页",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "Patreon 主頁",
-   "en": "Patreon home",
-   "ja": "Patreon ホーム",
-   "ko": "패트리온 홈",
-   "es": "Página de Patreon",
-   "fr": "Page Patreon",
-   "de": "Patreon-Seite",
-   "pt-BR": "Página do Patreon",
-   "ru": "Страница Patreon"
-  },
-  {
-   "zh": "Patreon 主页查看作者动态，咖啡赞助为 US$5。",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "Patreon 主頁查看作者動態，咖啡贊助為 US$5。",
-   "en": "Visit Patreon for creator updates, or buy me a coffee for US$5.",
-   "ja": "Patreon で作者の近況をチェック。コーヒー支援は US$5 です。",
-   "ko": "Patreon에서 개발 소식을 확인하거나 US$5로 커피 한 잔을 후원해 주세요.",
-   "es": "Visita Patreon para actualizaciones de creadores, o cómprame un café por US$5.",
-   "fr": "Visitez Patreon pour les mises à jour du créateur, ou achetez-moi un café pour US$5.",
-   "de": "Besuchen Sie Patreon für Creator-Updates oder kaufen Sie mir einen Kaffee für 5 US-Dollar.",
-   "pt-BR": "Visite Patreon para atualizações do criador, ou me pague um café por US$5.",
-   "ru": "Посетите Patreon для обновления создателя или купите мне кофе за 5 долларов США."
-  },
-  {
    "zh": "Patreon、微信与支付宝",
    "src": "qml/SettingsPage.qml",
    "zh-TW": "Patreon、微信與支付寶",
@@ -4952,19 +4926,6 @@
    "de": "Veyra ist bereits geöffnet. Wechsle zum vorhandenen Fenster.",
    "pt-BR": "O Veyra já está aberto. Volte à janela do programa para continuar.",
    "ru": "Veyra уже открыт. Переключитесь на его окно, чтобы продолжить."
-  },
-  {
-   "zh": "Veyra 开源免费，也需要你的支持",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "Veyra 開源免費，也需要你的支持",
-   "en": "Veyra is free and open source, and it runs on your support",
-   "ja": "Veyra は無料のオープンソース。皆さんの支援が支えです",
-   "ko": "Veyra는 무료 오픈 소스 프로그램입니다. 여러분의 후원이 개발을 이어가는 힘이 됩니다.",
-   "es": "Veyra es libre y de código abierto, y funciona con su apoyo",
-   "fr": "Veyra est libre et open source, et il fonctionne sur votre support",
-   "de": "Veyra ist kostenlos und Open Source, und es läuft auf Ihre Unterstützung",
-   "pt-BR": "Veyra é livre e de código aberto, e é executado em seu suporte",
-   "ru": "Veyra является бесплатным и открытым исходным кодом, и он работает на вашей поддержке."
   },
   {
    "zh": "Veyra 本地诊断（复制前脱敏预览；不会上传）\n",
@@ -5929,19 +5890,6 @@
    "ru": "{} GPU перезагрузить {} время(ы); экспортировать в {} части и соединить без повторного кодирования"
   },
   {
-   "zh": "☕ 请作者喝杯咖啡 · US$5",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "☕ 請作者喝杯咖啡 · US$5",
-   "en": "☕ Buy me a coffee · US$5",
-   "ja": "☕ コーヒーで支援 · US$5",
-   "ko": "☕ 커피 한 잔 후원 · US$5",
-   "es": "☕ Invítame a un café · 5 US$",
-   "fr": "☕ Offrez-moi un café · 5 $ US",
-   "de": "☕ Spendier mir einen Kaffee · 5 US$",
-   "pt-BR": "☕ Me pague um café · US$ 5",
-   "ru": "☕ Угостите меня кофе · 5 $"
-  },
-  {
    "zh": "。RTX Video HDR 未能启动：可在设置里关闭该效果，或更新 NVIDIA 驱动",
    "src": "src/engine/EngineController.cpp",
    "zh-TW": "。RTX Video HDR 未能啟動：可在設定裡關閉該效果，或更新 NVIDIA 驅動",
@@ -6837,19 +6785,6 @@
    "de": "Mittel+Niedrig",
    "pt-BR": "Médio+Baixo",
    "ru": "Среднее+Низкое"
-  },
-  {
-   "zh": "中国大陆用户",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "中國大陸用戶",
-   "en": "Users in mainland China",
-   "ja": "中国本土の方",
-   "ko": "중국 본토 사용자",
-   "es": "Usuarios en China continental",
-   "fr": "Utilisateurs en Chine continentale",
-   "de": "Nutzer in Festlandchina",
-   "pt-BR": "Usuários na China continental",
-   "ru": "Пользователи в материковом Китае"
   },
   {
    "zh": "中延迟",
@@ -9426,19 +9361,6 @@
    "ru": "Выкл."
   },
   {
-   "zh": "关注作者",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "追蹤作者",
-   "en": "Follow the author",
-   "ja": "作者をフォロー",
-   "ko": "개발자 소식",
-   "es": "Seguir al autor",
-   "fr": "Suivre l'auteur",
-   "de": "Dem Entwickler folgen",
-   "pt-BR": "Seguir o autor",
-   "ru": "Подписаться на автора"
-  },
-  {
    "zh": "关闭",
    "src": "qml/AntiAliasEditor.qml",
    "zh-TW": "關閉",
@@ -10803,19 +10725,6 @@
    "de": "Go",
    "pt-BR": "Vai.",
    "ru": "Иди."
-  },
-  {
-   "zh": "前往主页",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "前往主頁",
-   "en": "Visit page",
-   "ja": "ページを開く",
-   "ko": "홈페이지 열기",
-   "es": "Visitar página",
-   "fr": "Visiter la page",
-   "de": "Seite besuchen",
-   "pt-BR": "Visitar página",
-   "ru": "Открыть страницу"
   },
   {
    "zh": "剔除内容",
@@ -12415,19 +12324,6 @@
    "de": "Kann gespeichert werden",
    "pt-BR": "Pode ser salvo",
    "ru": "Можно сохранить"
-  },
-  {
-   "zh": "可以用微信或支付宝扫码",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "可以用微信或支付寶掃碼",
-   "en": "Scan with WeChat or Alipay",
-   "ja": "WeChat または Alipay でスキャンできます",
-   "ko": "WeChat 또는 Alipay로 스캔",
-   "es": "Escanea con WeChat o Alipay",
-   "fr": "Scannez avec WeChat ou Alipay",
-   "de": "Mit WeChat oder Alipay scannen",
-   "pt-BR": "Escaneie com WeChat ou Alipay",
-   "ru": "Отсканируйте в WeChat или Alipay"
   },
   {
    "zh": "可变刷新",
@@ -18436,19 +18332,6 @@
    "ru": "Переключатели, прогресс, выбранное состояние"
   },
   {
-   "zh": "开发和测试设备的开销一直由作者自己承担。如果 Veyra 对你有帮助，欢迎请作者喝杯咖啡，你的支持就是持续更新的动力。",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "開發和測試設備的開銷一直由作者自己承擔。如果 Veyra 對你有幫助，歡迎請作者喝杯咖啡，你的支持就是持續更新的動力。",
-   "en": "The author has always paid for development and test hardware out of pocket. If Veyra helps you, consider buying the author a coffee: your support is what keeps the updates coming.",
-   "ja": "開発とテスト機材の費用は、これまで作者が自分で負担してきました。Veyra が役に立ったら、作者にコーヒーを一杯おごってください。皆さんの支援が更新を続ける力になります。",
-   "ko": "Veyra의 개발과 테스트 장비 비용은 개발자가 직접 부담하고 있습니다. 프로그램이 도움이 되었다면 커피 한 잔을 후원해 주세요. 여러분의 후원이 꾸준한 업데이트에 큰 힘이 됩니다.",
-   "es": "El autor siempre ha pagado por el desarrollo y la prueba de hardware fuera del bolsillo. Si Veyra te ayuda, considera comprar al autor un café: tu apoyo es lo que mantiene las actualizaciones viniendo.",
-   "fr": "L'auteur a toujours payé pour le développement et l'essai du matériel hors de poche. Si Veyra vous aide, envisagez d'acheter un café à l'auteur: votre soutien est ce qui maintient les mises à jour à venir.",
-   "de": "Der Autor hat immer für die Entwicklung und den Test von Hardware aus eigener Tasche bezahlt. Wenn Veyra Ihnen hilft, überlegen Sie, dem Autor einen Kaffee zu kaufen: Ihre Unterstützung ist es, die die Updates immer weiter bringt.",
-   "pt-BR": "O autor sempre pagou pelo desenvolvimento e teste de hardware do bolso. Se Veyra o ajudar, considere comprar um café ao autor: seu suporte é o que mantém as atualizações chegando.",
-   "ru": "Автор всегда платил за разработку и тестирование аппаратного обеспечения из своего кармана. Если Veyra поможет вам, подумайте о том, чтобы купить автору кофе: ваша поддержка - это то, что поддерживает обновления."
-  },
-  {
    "zh": "开启使用 Small 模型；关闭使用原模型。每层独立选择，切换会重建 NR，画面可能有所不同。",
    "src": "qml/NrLayerEditor.qml",
    "zh-TW": "開啟使用 Small 模型；關閉使用原模型。每層獨立選擇，切換會重建 NR，畫面可能有所不同。",
@@ -19905,19 +19788,6 @@
    "ru": "Если важнее всего отзывчивость, я выбираю **захват в 1440p60 NV12 с последующим масштабированием**. Для эффекта HDR при меньших затратах попробуйте **RTX Video HDR** после захвата SDR. Для исходного 4K60 HDR я бы смотрел на карты PCIe."
   },
   {
-   "zh": "微信扫码",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "微信掃碼",
-   "en": "WeChat Pay",
-   "ja": "WeChat Pay",
-   "ko": "위챗페이",
-   "es": "Nosotros pagamos",
-   "fr": "Paiement WeChat",
-   "de": "WeChat Pay",
-   "pt-BR": "WeChat Pay",
-   "ru": "WeChat Pay"
-  },
-  {
    "zh": "心理视觉调优",
    "src": "qml/SettingsPage.qml",
    "zh-TW": "心理視覺調校",
@@ -21088,19 +20958,6 @@
    "ru": "Супресс добавил оттенок на белые стены, облака и серые зоны"
   },
   {
-   "zh": "抖音",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "抖音",
-   "en": "Douyin",
-   "ja": "Douyin",
-   "ko": "Douyin",
-   "es": "Douyin",
-   "fr": "Douyin",
-   "de": "Douyin",
-   "pt-BR": "Douyin",
-   "ru": "Дуйин"
-  },
-  {
    "zh": "抗锯齿",
    "src": "qml/ProPage.qml",
    "zh-TW": "抗鋸齒",
@@ -22049,19 +21906,6 @@
    "de": "Das Ergebnis wurde nicht bestätigt. Überprüfen Sie noch einmal. Das Backup wird beibehalten; Writes werden nicht automatisch wiederholt.",
    "pt-BR": "O resultado não foi confirmado. Verifica outra vez. A cópia de segurança é retida; as gravações não serão automaticamente tentadas.",
    "ru": "Результат не подтвердился. Проверь еще раз. Резервная копия сохраняется; записи не будут перепроверены автоматически."
-  },
-  {
-   "zh": "支付宝扫码",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "支付寶掃碼",
-   "en": "Alipay",
-   "ja": "Alipay",
-   "ko": "알리페이",
-   "es": "Alipay",
-   "fr": "Alipay",
-   "de": "Alipay",
-   "pt-BR": "Alipay",
-   "ru": "Alipay"
   },
   {
    "zh": "收 ",
@@ -36271,19 +36115,6 @@
    "de": "Entwickler unterstützen",
    "pt-BR": "Apoie o autor",
    "ru": "Поддержать автора"
-  },
-  {
-   "zh": "赞助完全自愿，不影响任何功能。谢谢你的支持！",
-   "src": "qml/SponsorPanel.qml",
-   "zh-TW": "贊助完全自願，不影響任何功能。謝謝你的支持！",
-   "en": "Sponsoring is entirely voluntary and doesn't affect any feature. Thank you for your support!",
-   "ja": "支援は任意で、機能には一切影響しません。ご支援ありがとうございます！",
-   "ko": "후원은 자율이며 기능 이용에는 영향을 주지 않습니다. 도움을 주셔서 감사합니다!",
-   "es": "El patrocinio es totalmente voluntario y no afecta ninguna característica. ¡Gracias por su apoyo!",
-   "fr": "Le parrainage est entièrement volontaire et n'affecte aucune fonctionnalité. Merci de votre soutien!",
-   "de": "Sponsoring ist völlig freiwillig und beeinflusst keine Funktion. Vielen Dank für Ihre Unterstützung!",
-   "pt-BR": "O patrocínio é totalmente voluntário e não afeta nenhum recurso. Obrigado pelo seu apoio!",
-   "ru": "Спонсорство является полностью добровольным и не влияет на какие-либо функции. Спасибо за поддержку!"
   },
   {
    "zh": "起播预缓冲",

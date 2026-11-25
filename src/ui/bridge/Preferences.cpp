@@ -634,32 +634,6 @@ void QmlPlayerBridge::openFeedbackPage() {
 void QmlPlayerBridge::openReleasesPage() {
     QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/Likely7/Veyra-NRVideo/releases")));
 }
-bool QmlPlayerBridge::openSponsorLink(const QString& id) {
-    // The author's pages as the author gave them (2026-10-19); the page shows buttons,
-    // never these addresses.
-    static constexpr std::pair<const char*, const char*> links[] = {
-        {"douyin", "https://v.douyin.com/9s06Bf2Inqc/"},
-        {"x", "https://x.com/likely2002"},
-        {"github", "https://github.com/Likely7"},
-        {"youtube", "https://www.youtube.com/@Likely7Ai"},
-        {"patreon", "https://www.patreon.com/cw/Likely7"},
-        {"patreonCoffee", "https://www.patreon.com/Likely7/posts/buy-me-coffee-175018110"},
-    };
-    for (const auto& [name, url] : links) {
-        if (id != QLatin1StringView(name)) continue;
-        veyra::log::info("ui-sponsor", std::format("open {}", name));
-        // Acceptance runs click every card: they read the address from the log
-        // instead of opening a browser on the test machine.
-        if (qEnvironmentVariableIsSet("VEYRA_TEST_SPONSOR_NO_BROWSER")) {
-            veyra::log::info("ui-sponsor", std::format("test url {}", url));
-            return true;
-        }
-        if (QDesktopServices::openUrl(QUrl(QString::fromLatin1(url)))) return true;
-        emit notice(tr("无法打开浏览器"), true);
-        return false;
-    }
-    return false;
-}
 QObject* QmlPlayerBridge::updates() const { return updates_; }
 bool QmlPlayerBridge::eventFilter(QObject* watched, QEvent* event) {
     const auto type = event->type();

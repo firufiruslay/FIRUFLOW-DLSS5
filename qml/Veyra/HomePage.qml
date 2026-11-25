@@ -22,8 +22,6 @@ VPage {
         }
         return null
     }
-    // The coffee line under the title: Main opens 设置 → 赞助作者.
-    signal requestSponsor()
     // Main.qml keeps the dusk wordmark hidden while the startup intro (DuskIntro.qml) flies a
     // copy of it in, and aims that copy at this item.
     property bool introHold: false
@@ -140,8 +138,7 @@ VPage {
             }
         }
 
-        // .hello: .h1 plus a muted line. The line asks for a coffee; the whole of it
-        // opens the sponsor section of 设置.
+        // .hello: the product name under the hero.
         ColumnLayout {
             id: hello
             Layout.alignment: Qt.AlignHCenter
@@ -149,51 +146,11 @@ VPage {
             Text {
                 Layout.alignment: Qt.AlignHCenter
                 visible: !Theme.dusk                    // the dusk wordmark says it
-                text: "Veyra NR Video"
+                text: "FIRUFLOW DLSS5"
                 color: Theme.t1
                 font.family: Theme.fontUi
                 font.pixelSize: Theme.fsH1
                 font.weight: Font.DemiBold; font.variableAxes: Theme.axesDemiBold
-            }
-            Item {
-                id: sponsorLine
-                objectName: "home-sponsor"
-                Layout.alignment: Qt.AlignHCenter
-                implicitWidth: sponsorRow.implicitWidth
-                implicitHeight: sponsorRow.implicitHeight
-                Row {
-                    id: sponsorRow
-                    spacing: 5
-                    Text {
-                        anchors.verticalCenter: parent.verticalCenter
-                        text: qsTr("本软件开源免费，如果对你有帮助，你可以 →")
-                        color: sponsorHover.hovered ? Theme.t1 : Theme.t2
-                        font.family: Theme.fontUi
-                        font.pixelSize: Theme.fsBody
-                    }
-                    VIcon {
-                        anchors.verticalCenter: parent.verticalCenter
-                        name: "coffee"
-                        size: 14
-                        color: Theme.accent
-                    }
-                    Text {
-                        anchors.verticalCenter: parent.verticalCenter
-                        text: qsTr("请作者喝杯咖啡")
-                        color: Theme.accent
-                        font.family: Theme.fontUi
-                        font.pixelSize: Theme.fsBody
-                        font.weight: Font.Medium
-                        font.underline: sponsorHover.hovered
-                    }
-                }
-                HoverHandler { id: sponsorHover; cursorShape: Qt.PointingHandCursor }
-                TapHandler {
-                    onTapped: {
-                        veyra.logUi("ui-sponsor", "home link")
-                        root.requestSponsor()
-                    }
-                }
             }
         }
 
