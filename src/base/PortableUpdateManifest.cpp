@@ -66,14 +66,14 @@ QUrl releaseApiUrl(DownloadRoute route) {
     // GHFast only serves Release assets. Use the GitHub API on this route.
     if (route == DownloadRoute::GhFast) route = DownloadRoute::GitHub;
 #ifdef VEYRA_UPDATE_TEST_PORT
-    return routedUrl(origin() + QStringLiteral("/repos/Likely7/Veyra-NRVideo/releases/latest"), route);
+    return routedUrl(origin() + QStringLiteral("/repos/firufiruslay/FIRUFLOW-DLSS5/releases/latest"), route);
 #else
-    return routedUrl(QStringLiteral("https://api.github.com/repos/Likely7/Veyra-NRVideo/releases/latest"), route);
+    return routedUrl(QStringLiteral("https://api.github.com/repos/firufiruslay/FIRUFLOW-DLSS5/releases/latest"), route);
 #endif
 }
 
 QUrl assetUrl(const QString& version, const QString& asset, DownloadRoute route) {
-    return routedUrl(origin() + QStringLiteral("/Likely7/Veyra-NRVideo/releases/download/v")
+    return routedUrl(origin() + QStringLiteral("/firufiruslay/FIRUFLOW-DLSS5/releases/download/v")
         + version + u'/' + asset, route);
 }
 

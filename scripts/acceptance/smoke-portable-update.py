@@ -41,7 +41,7 @@ def run(args):
     received = []
     transfers = []
     mirror_prefix = f"/mirror/{args.route}"
-    release_path = f"/Likely7/Veyra-NRVideo/releases/download/v{version}"
+    release_path = f"/firufiruslay/FIRUFLOW-DLSS5/releases/download/v{version}"
 
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *_):
@@ -61,7 +61,7 @@ def run(args):
                 return
             path = self.path.removeprefix(mirror_prefix) if mirrored else self.path
             if path.endswith("/releases/latest"):
-                page = f"https://github.com/Likely7/Veyra-NRVideo/releases/tag/v{version}"
+                page = f"https://github.com/firufiruslay/FIRUFLOW-DLSS5/releases/tag/v{version}"
                 self.bytes_response(json.dumps(dict(tag_name=f"v{version}", html_url=page,
                                                     draft=False, prerelease=False)).encode())
             elif path == release_path + "/" + args.manifest.name:
@@ -134,7 +134,7 @@ def run(args):
     else:
         assert active[0] == before and result == "startup-check-failed", (active, result)
     if args.route != "github":
-        api = "/repos/Likely7/Veyra-NRVideo/releases/latest"
+        api = "/repos/firufiruslay/FIRUFLOW-DLSS5/releases/latest"
         assert (mirror_prefix + api in received) == (args.route == "gh-proxy"), received
         assert mirror_prefix + release_path + "/" + args.manifest.name in received, received
         if args.scenario != "bad-signature":

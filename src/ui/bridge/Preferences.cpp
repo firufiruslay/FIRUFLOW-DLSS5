@@ -136,7 +136,7 @@ QVariantList QmlPlayerBridge::readComponentList() const {
 
 void QmlPlayerBridge::openProjectPage() {
     // 关于 → 交流群: the group QR codes are kept current in the project README.
-    if (!QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/Likely7/Veyra-NRVideo#readme"))))
+    if (!QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/firufiruslay/FIRUFLOW-DLSS5#readme"))))
         emit notice(tr("无法打开浏览器"), true);
 }
 
@@ -628,11 +628,11 @@ void QmlPlayerBridge::updateLiveCompanionCompat() {
 int QmlPlayerBridge::uiScaleActive() const { return qApp ? qApp->property("veyraUiScale").toInt() : 0; }
 void QmlPlayerBridge::openFeedbackPage() {
     copyDiagnostics();
-    QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/Likely7/Veyra-NRVideo/issues")));
+    QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/firufiruslay/FIRUFLOW-DLSS5/issues")));
     emit notice(tr("诊断信息已复制，可直接粘贴到反馈里"), false);
 }
 void QmlPlayerBridge::openReleasesPage() {
-    QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/Likely7/Veyra-NRVideo/releases")));
+    QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/firufiruslay/FIRUFLOW-DLSS5/releases")));
 }
 QObject* QmlPlayerBridge::updates() const { return updates_; }
 bool QmlPlayerBridge::eventFilter(QObject* watched, QEvent* event) {

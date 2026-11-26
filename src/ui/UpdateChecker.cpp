@@ -94,7 +94,7 @@ void UpdateChecker::finish() {
         const QUrl url(obj.value(QStringLiteral("html_url")).toString());
         const bool validUrl = url.scheme() == QStringLiteral("https") && url.host() == QStringLiteral("github.com")
             && url.userInfo().isEmpty() && url.port(-1) == -1 && !url.hasQuery() && !url.hasFragment()
-            && url.path() == QStringLiteral("/Likely7/Veyra-NRVideo/releases/tag/") + tag;
+            && url.path() == QStringLiteral("/firufiruslay/FIRUFLOW-DLSS5/releases/tag/") + tag;
         if (error.error != QJsonParseError::NoError || !document.isObject()
             || !obj.value(QStringLiteral("draft")).isBool() || obj.value(QStringLiteral("draft")).toBool()
             || !obj.value(QStringLiteral("prerelease")).isBool() || obj.value(QStringLiteral("prerelease")).toBool()
