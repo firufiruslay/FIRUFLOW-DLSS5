@@ -6,8 +6,12 @@ Este repo es el fork de Firuo (`firufiruslay/FIRUFLOW-DLSS5`), no el proyecto or
   upstream como base por defecto: pasa siempre `--repo firufiruslay/FIRUFLOW-DLSS5`. El
   repo ya tiene fijado `gh repo set-default` apuntando aquí.
 - **Dentro de este repo todo cambio entra por PR**, de una rama suya a `main`. Nada de commits
-  ni merges directos sobre `main`: el PR es donde se revisa el cambio y donde el build de
-  Windows se pronuncia antes de que `main` lo adopte.
+  ni merges directos sobre `main`: el PR es donde se revisa el cambio antes de que `main` lo
+  adopte.
+- **El paquete y el instalador se construyen en local**, en la máquina Windows del canal, con
+  los mismos pines que `.github/workflows/windows-build.yml`. Ese workflow ya no corre solo en
+  cada push o PR; se lanza a mano cuando hace falta un build con atestación. Un PR que toque
+  código de Windows indica qué build local lo verificó.
 - Se conserva la atribución a Veyra que exige la GPL-3.0 (créditos, avisos de terceros,
   copyright). Lo que no se conserva son los enlaces de donación o pago.
 - El contexto del workspace está en `../AGENTS.md` y `../project-memory/`.

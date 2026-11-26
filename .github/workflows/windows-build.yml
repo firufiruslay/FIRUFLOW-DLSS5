@@ -8,21 +8,14 @@ name: Windows build (reproducible)
 # outside pull requests, a signed build-provenance attestation so users can
 # check that a download came from this workflow:
 #   gh attestation verify <zip> -R firufiruslay/FIRUFLOW-DLSS5
-
+#
+# Manual only: the package and installer are built on the channel's Windows
+# machine, which reproduces these steps with the same pins in ~40 minutes less
+# per change. This file stays the authoritative list of pinned dependencies (the
+# local build reads its versions from here), and running it by hand still gives
+# a build with a provenance attestation when one is wanted.
 on:
   workflow_dispatch:
-  push:
-    # Branch pushes run only when the CI files change; version tags always run
-    # (GitHub does not apply path filters to tag pushes).
-    branches: ['**']
-    tags: ['v*']
-    paths:
-      - '.github/workflows/windows-build.yml'
-      - 'scripts/ci/**'
-  pull_request:
-    paths:
-      - '.github/workflows/windows-build.yml'
-      - 'scripts/ci/**'
 
 permissions:
   contents: read
