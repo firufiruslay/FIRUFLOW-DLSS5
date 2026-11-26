@@ -52,6 +52,9 @@ VrrProfileResult repairVrrProfile(const VrrProfileSnapshot& expected) {
     driver.state.settings = {VrrProfileValue{2, true}, VrrProfileValue{2, true}};
     result.snapshot = driver.state; result.changed = true; return result;
 }
+// The controller's constructor logs this on a worker thread. The real one reads the
+// driver's own V-Sync profile, which a runner has no access to.
+std::string nvidiaVsyncProfileDiagnostic(const std::wstring&) { return "fake driver adapter"; }
 VrrProfileResult restoreVrrProfile(const VrrProfileSnapshot& original, const VrrProfileSnapshot& expected) {
     const std::lock_guard lock(driver.mutex);
     ++driver.restores;
