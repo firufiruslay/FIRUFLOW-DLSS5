@@ -7,8 +7,8 @@ dependency tree: FidelityFX, the experimental NGX runtime, the NR weights and a
 release-runtime-manifest.json covering every one of them. This repository has
 none of that, so this script does the same two jobs for the pieces that exist,
 keeps the identity audit (every runtime file carries size and digest), and
-drives upstream's own scripts/installer/Veyra.iss and branding so the installer
-is theirs, not a reimplementation.
+drives upstream's own scripts/installer/Veyra.iss so the installer is theirs,
+not a reimplementation, with this fork's wordmark on their wizard panel.
 
 What it does not do: the vendor signature audit (it needs PowerShell and a
 signed payload) and the portable update trust chain beyond what the build emits.
@@ -21,6 +21,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import tempfile
 import zipfile
 
@@ -47,6 +48,43 @@ def load_module(name, filename):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+def compose_branding(directory):
+    """Upstream's wizard panel geometry, carrying this fork's wordmark.
+
+    The author's own compose_branding paints the Veyra NR wordmark, which is the
+    one thing the installer must not show; the dusk backdrop and the sun are the
+    style this fork keeps.
+    """
+    from PIL import Image, ImageOps
+    art = ROOT / "qml/Veyra"
+    panel = ImageOps.fit(Image.open(art / "backdrop-dusk-strong.png").convert("RGBA"),
+                         (492, 1050), centering=(0.62, 0.52))
+    sun = Image.open(art / "intro-sun.png").convert("RGBA")
+    sun.thumbnail((326, 326), Image.Resampling.LANCZOS)
+    sun.putalpha(sun.getchannel("A").point(lambda value: int(value * 0.57)))
+    panel.alpha_composite(sun, ((panel.width - sun.width) // 2, 164))
+    wordmark = Image.open(ROOT / "assets/firuflow-wordmark.png").convert("RGBA")
+    wordmark.thumbnail((372, 372), Image.Resampling.LANCZOS)
+    panel.alpha_composite(wordmark, ((panel.width - wordmark.width) // 2, 400))
+    destination = directory / "brand-panel.png"
+    panel.convert("RGB").save(destination)
+
+    mark = Image.open(art / "logo-dusk.png").convert("RGBA")
+    mark.thumbnail((156, 116), Image.Resampling.LANCZOS)
+    icon = Image.new("RGBA", (174, 174), (0, 0, 0, 0))
+    icon.alpha_composite(mark, ((icon.width - mark.width) // 2, (icon.height - mark.height) // 2))
+    small = directory / "brand-icon.png"
+    icon.save(small)
+    return destination, small
+
+
+def verify_imports(package):
+    """Refuse to ship a package whose modules import a DLL it does not carry."""
+    system = Path(os.environ.get("SystemRoot", r"C:\Windows")) / "System32"
+    subprocess.run([sys.executable, str(ROOT / "scripts/ci/check-package-imports.py"),
+                    "--package", str(package), "--system-dir", str(system)], check=True)
 
 
 def assemble(stage, runtime, output, flavor, version):
@@ -98,7 +136,7 @@ def build_setup(args, package, version, flavor):
         directory = Path(directory_string)
         output = directory / "output"
         output.mkdir()
-        panel, icon = installer.compose_branding(directory)
+        panel, icon = compose_branding(directory)
         (directory / "portable-package.txt").write_bytes(MARKER.format(flavor=flavor).encode("ascii"))
         (directory / "veyra-installation.txt").write_bytes(f"FIRUFLOW.Win64.{flavor}".encode("ascii"))
 
@@ -161,6 +199,7 @@ def main():
 
     args.output.mkdir(parents=True, exist_ok=True)
     package = assemble(args.stage, args.runtime, args.output, args.flavor, args.version)
+    verify_imports(package)
     archive(package)
     if args.iscc:
         if not args.build:
