@@ -26,7 +26,7 @@
 //
 // The software scene graph (the default interface renderer) has no shader effects, so this
 // is only Image, Rectangle, clip, opacity and transforms. The layers, glows and soft edges
-// are images baked by tools/qt_probe/make-wordmark-dusk.py and make-intro-dusk.py.
+// are images baked by tools/firuflow/make-wordmark.sh and tools/qt_probe/make-intro-dusk.py.
 import QtQuick
 
 Item {
@@ -149,14 +149,14 @@ Item {
     readonly property real scene: 1 - inOutSine(at(handoffAt + 120, total))
 
     // --- layout: the wordmark stands on the horizon, a little above the middle ---------
-    readonly property real aspect: 1164 / 969                      // wordmark-dusk.png
+    readonly property real aspect: 1164 / 424                      // wordmark-firuflow.png
     readonly property real glowPad: 186 / 1164                     // the glow's margin
     readonly property real heroH: Math.round(Math.min(height * 0.44, width * 0.5 / aspect))
     readonly property real heroW: Math.round(heroH * aspect)
     readonly property real horizonY: Math.round(height * 0.43 + heroH / 2)
     readonly property real sunD: Math.round(heroH * 1.42)
     readonly property real sunCentreY: mix(horizonY + sunD * 0.55, horizonY - sunD * 0.30, sunUp)
-    // A layer's box at time t. depth: 0 far (N) .. 1 near ("Veyra"); lag: how much later it
+    // A layer's box at time t. depth: 0 far (DL) .. 1 near (FIRUFLOW); lag: how much later it
     // sets off on the glide. Near layers come from closer to the camera, move more in the push
     // and the drift, and trail on the glide. Scaled about the wordmark's foot on the horizon.
     function layerRect(t, depth, appear, land, rush, k0, thud, lag) {
@@ -354,7 +354,7 @@ Item {
         y: intro.backRect.y - intro.backRect.width * intro.glowPad
         width: intro.backRect.width * (1 + 2 * intro.glowPad)
         height: intro.backRect.height + 2 * intro.backRect.width * intro.glowPad
-        source: "wordmark-dusk-glow.png"
+        source: "wordmark-firuflow-glow.png"
         asynchronous: true
         opacity: intro.ms < intro.handoffAt ? 0.42 * intro.outCubic(intro.at(intro.hitV, 2400)) : intro.mix(0.42, 0.16, intro.glide)
         visible: opacity > 0
@@ -363,9 +363,9 @@ Item {
     // the glide, the whole wordmark decoded at the home page's size fades in, so the last frame
     // is the home wordmark's own pixels.
     Repeater {
-        model: [{ src: "wordmark-dusk-n.png", depth: 0, appear: 160, land: 639, rush: 150, k0: 0.42, thud: 0.022, lag: 0 },
-                { src: "wordmark-dusk-r.png", depth: 0.35, appear: 330, land: 789, rush: 140, k0: 0.5, thud: 0.022, lag: 25 },
-                { src: "wordmark-dusk-veyra.png", depth: 1, appear: 600, land: 1115, rush: 190, k0: 0.75, thud: 0.03, lag: 55 }]
+        model: [{ src: "wordmark-firuflow-dl.png", depth: 0, appear: 160, land: 639, rush: 150, k0: 0.42, thud: 0.022, lag: 0 },
+                { src: "wordmark-firuflow-ss5.png", depth: 0.35, appear: 330, land: 789, rush: 140, k0: 0.5, thud: 0.022, lag: 25 },
+                { src: "wordmark-firuflow-name.png", depth: 1, appear: 600, land: 1115, rush: 190, k0: 0.75, thud: 0.03, lag: 55 }]
         Image {
             required property var modelData
             readonly property rect box: intro.layerRect(intro.ms, modelData.depth, modelData.appear, modelData.land, modelData.rush,
@@ -387,7 +387,7 @@ Item {
         y: intro.target.y
         width: intro.target.width
         height: intro.target.height
-        source: "wordmark-dusk.png"
+        source: "wordmark-firuflow.png"
         sourceSize: Qt.size(Math.round(intro.target.width), Math.round(intro.target.height))
         asynchronous: true
         opacity: intro.at(intro.total - 90, intro.total)

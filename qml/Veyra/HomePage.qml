@@ -99,7 +99,7 @@ VPage {
             }
         }
 
-        // 日落: the user's wordmark (tools/qt_probe/make-wordmark-dusk.py) in place of the gamepad
+        // 日落: this fork's wordmark (tools/firuflow/make-wordmark.sh) in place of the gamepad
         // and the title, a baked glow breathing behind it (the software scene graph draws no
         // MultiEffect). 0.24 of the page height, 130..210 px, so short windows keep the cards.
         Item {
@@ -117,22 +117,25 @@ VPage {
                 NumberAnimation { to: 0; duration: Theme.d(2250); easing.type: Easing.InOutSine }
             }
             Image {
-                // wordmark-dusk-glow.png is the wordmark's box grown by 186/1164 of its width.
+                // wordmark-firuflow-glow.png is the wordmark's box grown by 186/1164 of its width.
                 readonly property real pad: wordmark.width * 186 / 1164
                 x: -pad
                 y: -pad
                 width: wordmark.width + 2 * pad
                 height: wordmark.height + 2 * pad
-                source: "wordmark-dusk-glow.png"
+                source: "wordmark-firuflow-glow.png"
                 opacity: root.introHold ? 0 : 0.16 + 0.14 * duskMark.breath
             }
             Image {
                 id: wordmark
                 objectName: "home-wordmark"
-                height: Math.round(root.compact ? Math.min(90, root.height * 0.15)
-                                               : Math.max(130, Math.min(210, root.height * 0.24)))
-                width: Math.round(height * 1164 / 969)
-                source: "wordmark-dusk.png"
+                // The lockup is wide where upstream's was nearly square, so the page's own
+                // width caps it as well as its height.
+                readonly property int band: root.compact ? Math.min(90, root.height * 0.15)
+                                                         : Math.max(130, Math.min(210, root.height * 0.24))
+                height: Math.round(Math.min(band, root.width * 0.52 * 424 / 1164))
+                width: Math.round(height * 1164 / 424)
+                source: "wordmark-firuflow.png"
                 sourceSize: Qt.size(width, height)
                 opacity: root.introHold ? 0 : 1
             }
