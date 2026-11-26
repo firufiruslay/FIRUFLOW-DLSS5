@@ -29,3 +29,9 @@ CMakeUserPresets.json
 startup-music.mp3
 BGM.MP3
 __pycache__/
+
+# Paquetes descargados del CI con `gh run download`, que escribe en el directorio actual.
+# El instalador pesa 254 MB y es reproducible desde su run, así que nunca se commitea.
+/FIRUFLOW-DLSS5-*.zip
+/FIRUFLOW-DLSS5-*.exe
+/SHA256SUMS.txt
